@@ -1,0 +1,103 @@
+<div class="container">
+  <table class="table table-striped" id="table-list" ng-if="!recommendations && !noRecommendations">
+     <thead>
+       <tr>
+         <th>Product</th>
+         <th>Description</th>
+         <th>Price</th>
+       </tr>
+     </thead>
+     <tbody>
+        <tr ng-repeat="product in itemList">
+           <td class="clickable">
+             <div class="row">
+             <img data-ng-click="getRecommendations(itemList, product.itemId)" ng-src="{{product.thumbnailImage}}"/>
+            </div>
+            <div class = "row">
+            <a href="javascript:;" data-ng-click="getRecommendations(itemList, product.itemId)">
+               {{product.name}}
+             </a>
+           </div>
+           <div>
+             <img ng-src="{{product.customerRatingImage}}"/>
+           </div>
+           </td>
+           <td>
+             <label href="javascript:;">
+               {{product.shortDescription ? product.shortDescription: 'No Description available for this item.'}}
+             </label>
+           </td>
+           <td>
+             <label>
+               {{product.salePrice |  currency}}
+             </label>
+           </td>
+        </tr>
+     </tbody>
+    </table>
+    <div class="row" ng-if="selectedItem">
+      <div class="col-md-6">
+          <div class="row">
+             <a href="javascript:;" data-ng-click="getRecommendations(selectedItem, selectedItem.itemId)">
+               {{selectedItem.name}}
+             </a>
+           </div>  
+           <div class="row">
+             <img data-ng-click="getRecommendations(selectedItem, selectedItem.itemId)" ng-src="{{selectedItem.largeImage}}"/>
+          </div>
+      </div>
+      <div class="col-md-6">
+             <label>
+               {{selectedItem.shortDescription}}
+             </label>
+             <br/>
+             <label>
+               Price: {{selectedItem.salePrice |  currency}}
+             </label>
+             <br/>
+             <div class="row">
+              Customer Rating: <img ng-src="{{selectedItem.customerRatingImage}}"/>
+          </div>
+      </div>
+    </div>
+  
+    <table class="table table-striped" id="table-list" ng-if="recommendations">
+     
+     <div ng-if="recommendations">
+     <label>Customers also considered</label>
+     </div>
+       
+     <tbody>
+      <tr>
+        <td class="col-md-1" ng-repeat="product in recommendations">
+           <div class="clickable">
+             <img data-ng-click="getRecommendations(recommendations, product.itemId)" ng-src="{{product.thumbnailImage}}"/>
+            <label height="36px">
+               {{product.salePrice |  currency}}
+            </label>
+           </div>
+           <a href="javascript:;" data-ng-click="getRecommendations(recommendations, product.itemId)">
+               {{product.name}}
+             </a>
+           <div>
+             <label class="stars stars-small">
+              <img ng-src="{{product.customerRatingImage}}"/>
+             </label>
+           </div>
+           <div>
+           </div>
+        </td>
+      </tr>
+     </tbody>
+    </table>
+
+  <div ng-if="noRecommendations">
+    <label>{{noRecommendations}}</label>
+  </div>
+
+  <div ng-if="!noRecommendations && !recommendations && !selectedItem">
+  <label>No Search Results found for this product</label>
+  </div>
+
+</div>
+

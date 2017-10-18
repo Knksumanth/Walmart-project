@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" ng-controller="MainCtrl">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Walmart</title>
+  <meta name="description" content="angular-kickstart - speed up your AngularJS development and testing with a great gulpjs build system.
+">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title ng-bind="title"></title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="keywords" content="AngularJS, angular-kickstart, gulp, bower, vesparny" />
+
+  <!-- build:css assets/css/main.css -->
+  <link rel="stylesheet" type="text/css" href="src/vendor/pure/pure.css" />
+  <link rel="stylesheet" type="text/css" href="src/vendor/pure/grids-responsive.css" />
+  <link rel="stylesheet" type="text/css" href="tmp/main.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="src/vendor/angular-bootstrap/ui-bootstrap-csp.css"/>
+  <link rel="stylesheet" type="text/css" href="src/vendor/bootstrap/dist/css/bootstrap.css"/>
+  <!-- CSS
+    ================================================== -->
+  <link href="assets/css/search.css" rel="stylesheet"/>
+  <link href="assets/css/button.css" rel="stylesheet"/>
+  <!-- endbuild -->
+</head>
+
+<body>
+  <div>
+    <header ui-view="header"></header>
+    <div ui-view class="l-page island"></div>
+    <footer ui-view="footer"></footer>
+  </div>
+
+  <!-- build:js assets/js/vendor.js -->
+  <script type="text/javascript" src="src/vendor/angular/angular.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js assets/js/main.js -->
+  <script type="text/javascript" src="src/app/app.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-translate/angular-translate.js"></script>
+  <script type="text/javascript" src="src/vendor/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+  <script type="text/javascript" src="src/vendor/lodash/lodash.js"></script>
+
+  <!-- modules init and config -->
+  <script type="text/javascript" src="src/app/modules/search/search.module.js"></script>
+  <script type="text/javascript" src="src/app/modules/search/search.routes.js"></script>
+  <script type="text/javascript" src="src/app/modules/home/home.module.js"></script>
+  <script type="text/javascript" src="src/app/modules/home/home.routes.js"></script>
+  <script type="text/javascript" src="src/app/common/common.module.js"></script>
+
+  <!-- search module-->
+  <script type="text/javascript" src="src/app/modules/search/controllers/search.controller.js"></script>
+
+  <!-- home module-->
+  <script type="text/javascript" src="src/app/modules/home/controllers/home.controller.js"></script>
+  <script type="text/javascript" src="src/app/modules/home/directives/item-list/itemList.directive.js"></script>
+
+  <!-- common -->
+  <script type="text/javascript" src="src/app/common/services/dataService.js"></script>
+
+  <script type="text/javascript" src="tmp/templates.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

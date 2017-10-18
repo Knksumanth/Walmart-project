@@ -1,0 +1,16 @@
+<div class="modal-dialog">
+    <div class="searchmodal-container">
+        <h1 class = "textColor">Welcome to Walmart Online Store!!</h1><br>
+
+        <form name="form">
+            <div class="input-group">
+                <input size="37" ng-model="searchvm.searchString" type="text"
+                       class="form-control" placeholder="Search Products" required/>
+                <br/>
+            </div>
+            <br/>
+            <button style = "width:100%" type="submit" class="btn btn-primary" ng-click="searchvm.getSearchResults(searchvm.searchString)">Search</button>
+        </form>
+        <br/>
+    </div>
+</div>
