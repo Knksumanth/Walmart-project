@@ -91,11 +91,11 @@
      </tbody>
     </table>
 
-  <div ng-if="noRecommendations">
+  <div ng-if="noRecommendations && !recommendations">
     <label>{{noRecommendations}}</label>
   </div>
 
-  <div ng-if="!noRecommendations && !recommendations && !selectedItem">
+  <div ng-if="!noRecommendations && !recommendations && !selectedItem && !itemList">
   <label>No Search Results found for this product</label>
   </div>
 
