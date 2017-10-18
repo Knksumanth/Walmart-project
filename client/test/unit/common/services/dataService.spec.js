@@ -187,7 +187,7 @@ var mockNoSearchResponse = {};
     beforeEach(function(){
         $httpBackend.whenGET("https://cors-anywhere.herokuapp.com/http://api.walmartlabs.com/v1/items?ids=42608098,42608097&apiKey=rq5vddrwrr9cxcrfwn9nqdtz").respond(500);
       });
-    it('should get search results with success', function() {
+    it('should get search results with error', function() {
       $httpBackend.expectGET('https://cors-anywhere.herokuapp.com/https://api.walmartlabs.com/v1/search?apiKey=rq5vddrwrr9cxcrfwn9nqdtz&query=ipod').respond(500);
 
      var searchString = 'ipod'; 
@@ -257,7 +257,7 @@ var mockNoSearchResponse = {};
       beforeEach(function(){
         $httpBackend.whenGET("https://cors-anywhere.herokuapp.com/http://api.walmartlabs.com/v1/items?ids=33078107,44707125&apiKey=rq5vddrwrr9cxcrfwn9nqdtz").respond(500);
       });
-      it('should get Recommendations results with success', function() {
+      it('should get Recommendations results with error', function() {
         $httpBackend.expectGET('https://cors-anywhere.herokuapp.com/http://api.walmartlabs.com/v1/nbp?apiKey=rq5vddrwrr9cxcrfwn9nqdtz&itemId=37648947').respond(500);
 
        var itemID = '37648947'; 

@@ -70,14 +70,12 @@
      *
      * @returns {undefined} It doesn't return
      */
-    function getResults (string) {
-      dataService.getResults(string).then(function (response){
+    function getResults (str) {
+      dataService.getResults(str).then(function (response){
         homevm.isLoading = false;
         homevm.products = response.items;
       }, function (error){
-          homevm.errorModalInstance.result.then(function() {
-            $state.go('root.search');
-          });
+         $state.go('root.search');
       });
     }
   }

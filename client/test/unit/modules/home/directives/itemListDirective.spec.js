@@ -4,7 +4,7 @@
 
   describe("Directive: itemList", function() {
 
-    var scope, directiveScope, element, actualOptions;
+    var scope, directiveScope, element, actualOptions, mockDataService;
     var mockupProducts = [
     {
       "itemId": 42608121,
@@ -73,10 +73,10 @@
     beforeEach(module('app'));
     beforeEach(module('home'));
 
-    beforeEach(inject(function($rootScope, $compile) {
+    beforeEach(inject(function($rootScope, $compile, _DataService_) {
       scope = $rootScope.$new();
       scope.products = mockupProducts;
-
+      mockDataService = _DataService_;
 
       element = angular.element('<item-list item-list="products"></item-list>');
       element = $compile(element)(scope);
@@ -85,17 +85,40 @@
 
       directiveScope = element.isolateScope();
 
-
     }));
-  
+
     describe('call getRecommendations function', function () {
       beforeEach(function(){
-  
+      
+        spyOn(mockDataService, 'getRecommendations').and.callFake(function() {
+            return {
+                then: function(callback) { return callback(mockUpResponse); }
+            };
+        });
       });
-      it("should call getRecommendations function", function() {
-        directiveScope.getRecommendations(mockupProducts, '42608121');
+          it("should call getRecommendations function", function() {
+          directiveScope.getRecommendations(mockupProducts, '42608121');
+          });
       });
-    }); 
+    
+      describe('call getRecommendations function', function () {
+      beforeEach(function(){
+      var response = {}; response.items = mockupProducts;
+        spyOn(mockDataService, 'getRecommendations').and.callFake(function() {
+            return {
+                then: function(callback) { return callback(response); }
+            };
+        });
+      });
+          it("should call getRecommendations function", function() {
+          directiveScope.getRecommendations(mockupProducts, '42608121');
+          });
+      });
     
   });
 })();
+
+
+
+
+

@@ -61,10 +61,9 @@
                     else{
                       scope.noRecommendations = "No Recommendations available for this item";
                     }
-                  }, function (error){
-                      homevm.errorModalInstance.result.then(function() {
-                        $state.go('root.search');
-                      });
+                  }, /*istanbul ignore next */
+                  function (error){
+                     $state.go('root.search');
                   });
             };
 

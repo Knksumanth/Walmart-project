@@ -53,11 +53,31 @@
         spyOn(mockDataService, 'getResults').and.callFake(function(mockUpString){
           var deferred = q.defer();
           deferred.resolve(mockRecommendedItemDetails);
+          return deferred.promise;
         });
       });
       it("should call getResults and retrieve results", function() {
-        var string = 'ipod';
-        homeController.getResults(string);
+        var str = 'ipod';
+        homeController.getResults(str);
+        rootScope.$digest();
+        expect(mockDataService.getResults).toHaveBeenCalled();
+
+      });
+    });
+
+    describe('getResults',function(){
+      beforeEach(function(){
+        spyOn(mockDataService, 'getResults').and.callFake(function(){
+          var deferred = q.defer();
+            deferred.reject();
+          return deferred.promise;
+        });
+      });
+      it("should call getResults and retrieve results", function() {
+        homeController.getResults();
+        rootScope.$digest();
+        expect(mockDataService.getResults).toHaveBeenCalled();
+
       });
     });
 
