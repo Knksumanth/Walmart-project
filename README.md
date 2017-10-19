@@ -32,15 +32,27 @@ You are now ready to go, your application is available at **http://127.0.0.1:300
 
 * **gulp serve** - The Application is up and running for you to access at port 3000. -- http://localhost:3000/#/search
 
+* **Sample Search Screen Shot:**
+![Screenshot](searchScreen.PNG)
+
+* **Sample Results Screen Shot:**
+![Screenshot](resultsScreen.PNG)
+
+* **Sample Recommendations Screen Shot:**
+![Screenshot](recommendationsScreen.PNG)
+
 TO look at both the web app and the documentation, stop gulp serve and do gulp default:
 * **gulp default** - With this task, you have the application running at port 3000 and documentation at port 8000.  -- http://localhost:8000/api
 
 * **Sample Documentation Screen Shot:**
 ![Screenshot](Documentation_Screenshot.PNG)
-  
 
 * **gulp test:unit** - For running unit tests. 
 and you can also check the code coverage percentage once run "gulp test:unit" task at -- Walmart_Assignment/client/test/unit-results/coverage/PhantomJS 1.9.8 (Windows 8 0.0.0)/index.html
+
+* **Sample Code Coverage Screen Shot:**
+![Screenshot](CodeCoverageReport.PNG)
+
 
 
 
