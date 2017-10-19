@@ -3,13 +3,13 @@
      <thead>
        <tr>
          <th>Product</th>
-         <th>Description</th>
+         <th class="middleColumn">Description</th>
          <th>Price</th>
        </tr>
      </thead>
      <tbody>
         <tr ng-repeat="product in itemList">
-           <td class="clickable">
+           <td class="clickable paddingLeft">
              <div class="row">
              <img data-ng-click="getRecommendations(itemList, product.itemId)" ng-src="{{product.thumbnailImage}}"/>
             </div>
@@ -22,13 +22,13 @@
              <img ng-src="{{product.customerRatingImage}}"/>
            </div>
            </td>
-           <td>
-             <label href="javascript:;">
+           <td class="middleColumn">
+             <label>
                {{product.shortDescription ? product.shortDescription: 'No Description available for this item.'}}
              </label>
            </td>
            <td>
-             <label>
+             <label style = "font-weight: bold;">
                {{product.salePrice |  currency}}
              </label>
            </td>
@@ -37,7 +37,7 @@
     </table>
     <div class="row" ng-if="selectedItem">
       <div class="col-md-6">
-          <div class="row">
+          <div class="row textStyling" style="padding-left: 20px;">
              <a href="javascript:;" data-ng-click="getRecommendations(selectedItem, selectedItem.itemId)">
                {{selectedItem.name}}
              </a>
@@ -48,7 +48,7 @@
       </div>
       <div class="col-md-6">
              <label>
-               {{selectedItem.shortDescription}}
+               {{selectedItem.shortDescription ? selectedItem.shortDescription: 'No Description available for this item.'}}
              </label>
              <br/>
              <label>
@@ -64,7 +64,7 @@
     <table class="table table-striped" id="table-list" ng-if="recommendations">
      
      <div ng-if="recommendations">
-     <label>Customers also considered</label>
+     <label class = "textStyling">Customers also considered</label>
      </div>
        
      <tbody>
@@ -92,11 +92,11 @@
     </table>
 
   <div ng-if="noRecommendations && !recommendations">
-    <label>{{noRecommendations}}</label>
+    <label class = "textStyling">{{noRecommendations}}</label>
   </div>
 
   <div ng-if="!noRecommendations && !recommendations && !selectedItem && !itemList">
-  <label>No Search Results found for this product</label>
+  <label class = "textStyling">No Search Results found for this product</label>
   </div>
 
 </div>

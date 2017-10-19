@@ -35,7 +35,7 @@
     var homevm = this;
     homevm.retrieveInfo = retrieveInfo;
     homevm.getResults = getResults;
-    retrieveInfo();
+    retrieveInfo(false);
     var isLoading; 
 
     /**
@@ -46,11 +46,12 @@
      * @description
      * This method will call the getResults function if search string is available, else redirects user to Search Page.
      *
+     * @param {Boolean} isOtherProducts Boolean
+     *
      * @returns {undefined} It doesn't return
      */
-    function retrieveInfo(){
-
-      if($stateParams.searchString){
+    function retrieveInfo(isOtherProducts){
+      if($stateParams.searchString && !isOtherProducts){
         homevm.isLoading = true;
         getResults($stateParams.searchString);
       }

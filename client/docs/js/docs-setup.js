@@ -19,7 +19,7 @@ NG_DOCS={
       "type": "controller",
       "moduleName": "home",
       "shortDescription": "This controller is responsible for displaying products based on search.",
-      "keywords": "$rootscope $state $stateparams api based call controller dataservice displaying doesn function getresults homectrl homevm keyword list method named products property redirects representing responsible retrieveinfo return search service string user variable viewmodel"
+      "keywords": "$rootscope $state $stateparams api based boolean call controller dataservice displaying doesn function getresults homectrl homevm isotherproducts keyword list method named products property redirects representing responsible retrieveinfo return search service string user variable viewmodel"
     },
     {
       "section": "api",
