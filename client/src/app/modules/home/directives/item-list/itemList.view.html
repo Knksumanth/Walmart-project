@@ -47,16 +47,19 @@
           </div>
       </div>
       <div class="col-md-6">
-             <label>
+             <label class = "detailsStyling">
                {{selectedItem.shortDescription ? selectedItem.shortDescription: 'No Description available for this item.'}}
              </label>
              <br/>
-             <label>
+             <label style = "font-weight: bold;">
                Price: {{selectedItem.salePrice |  currency}}
              </label>
              <br/>
              <div class="row">
               Customer Rating: <img ng-src="{{selectedItem.customerRatingImage}}"/>
+          </div>
+          <div class="row detailsStyling">
+              Stock: {{selectedItem.stock}}
           </div>
       </div>
     </div>
